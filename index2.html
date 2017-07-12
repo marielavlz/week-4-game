@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Crystals Collector!</title>
+
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+	<!--Bootstrap CSS-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Fugaz+One" rel="stylesheet">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+	
+<body>
+	<div style="background-image:url(assets/images/blue.jpg) !important" class="jumbotron">
+	  <div class="container">
+	  	<div class="header">
+	  		<h1>Crystals Collector!</h1>
+	  	</div>
+	  </div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-4">
+				<div class="instructions">
+					<div class="panel panel-default">
+  						<div class="panel-heading">
+    						<center><h3 class="panel-title">Instructions</h3></center>
+  						</div>
+ 						<div class="panel-body">
+    						<p>You will be given a random number at the start of the game.</p>
+							<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+							<p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
+							<p>The value of each crystal is hidden from you until you click on it.</p>
+							<p>Each time when the game starts, the game will change the values of each crystal.</p>
+  						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="score-number-container">
+					<div id="score-title">
+						<div class="well well-sm"><h3 class="panel-title">Your Total Score Is:</h3></div>
+					</div>
+					<div style="background: white !important" class="jumbotron">
+  						<div id="score-number"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-2">
+				<div class="panel panel-default">
+  					<div class="panel-body scorebox">
+    					<div id="victory-box">
+							<div id="wins-text">
+								<p>Wins:</p>
+								<div id="wins"></div>
+							</div>
+							<div id="losses-text">
+								<p>Losses:</p>
+								<div id="losses"></div>
+							</div>
+						</div>
+  					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="random-number-container">
+					<div class="panel panel-default">
+  						<div class="panel-body">
+    						<div id="random-number"></div>
+  						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="crystal1"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+<script src="assets/javascript/game.js"></script>
+</html>
