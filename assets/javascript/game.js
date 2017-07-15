@@ -8,9 +8,9 @@ $(document).ready(function() {
 	//$("#wins").append(wins);
 	//$("#losses").append(losses);
 
-	//First we generate a random number to guess.
+	//create a target number for the user to 'collect'	
 	var targetNumber = Math.floor(Math.random() * 120) + 19;
-	$("#random-number").text(targetNumber);
+		$("#random-number").text(targetNumber);
 
 	//Now each crystal has to be assigned their unique value randomly
 	var crystalOne = Math.floor(Math.random() * 12) + 1;
@@ -35,27 +35,33 @@ $(document).ready(function() {
 	}
 	console.log(imageCrystal);
 
-	//reset the game after a win or loss without losing count of the number of wins or losses
+	function newGame() {
 
-	function resetGame() {
 		crystalOne = Math.floor(Math.random() * 12) + 1;
 		crystalTwo = Math.floor(Math.random() * 12) + 1;
 		crystalThree = Math.floor(Math.random() * 12) + 1;
 		crystalFour = Math.floor(Math.random() * 12) + 1;
 
-		numberOptions[i]
+		console.log(crystalOne);
 
-		counter = 0;
-		//var crystalValue = 0;
-		//counter += crystalValue;
+		//select each button/crystals using jquery and using the attribute method apply the new crystal value using attr.
+		$(".crystals").each( function() {
+			var r = Math.floor(Math.random()*12)+1;
+			($(this).attr("data-crystalValue", r));
+		})
+		
 
-		$("#score-number").text(counter);
-		targetNumber = Math.floor(Math.random() * 120) + 19;
+		//create a target number for the user to reach.
+		var targetNumber = Math.floor(Math.random() * 120) + 19;
 		$("#random-number").text(targetNumber);
 
+		//reset the counter
+		counter = 0;
+		$("#score-number").text(counter);
 
-	};
-	console.log(resetGame);
+		
+
+	};	
 
 	//use a click function so when a crystal is clicked, the random number assigned is added to a counter
 
@@ -73,20 +79,19 @@ $(document).ready(function() {
 			alert("You win!");
 			var newWins = wins+=1
 			$("#wins").text(newWins);
-			resetGame();
+			newGame();
+
+
 		}
 
 		else if (counter > targetNumber) {
 			alert("You lose!");
 			var newLosses = losses+=1
 			$("#losses").text(newLosses);
-			resetGame();
+			newGame();
 		}
 
 	});
-
-
-	
 
 
 });
