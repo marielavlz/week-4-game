@@ -52,7 +52,7 @@ $(document).ready(function() {
 		
 
 		//create a target number for the user to reach.
-		var targetNumber = Math.floor(Math.random() * 120) + 19;
+		targetNumber = Math.floor(Math.random() * 120) + 19;
 		$("#random-number").text(targetNumber);
 
 		//reset the counter
